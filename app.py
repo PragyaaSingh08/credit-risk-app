@@ -445,8 +445,12 @@ with r1c1:
             },
         },
     ))
-    gauge.update_layout(**PLOTLY_LAYOUT, height=260)
-    st.plotly_chart(gauge, use_container_width=True)
+    gauge.update_layout(
+        height=260,
+        paper_bgcolor="#111827",
+        plot_bgcolor="#111827",
+        font=dict(color="#94A3B8")
+    )
 
 # Risk level donut
 with r1c2:
@@ -488,10 +492,15 @@ with r1c3:
                 textposition="outside",
                 textfont=dict(color="#F1F5F9", size=13),
             ))
-    bar_dec.update_layout(**PLOTLY_LAYOUT, height=260,
-                          showlegend=False, barmode="group",
-                          yaxis=dict(showgrid=True, gridcolor="#1F2D45"))
-    st.plotly_chart(bar_dec, use_container_width=True)
+    bar_dec.update_layout(
+        height=260,
+        paper_bgcolor="#111827",
+        plot_bgcolor="#111827",
+        font=dict(color="#94A3B8"),
+        showlegend=False,
+        barmode="group",
+        yaxis=dict(showgrid=True, gridcolor="#1F2D45")
+    )
 
 st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
 
@@ -508,11 +517,15 @@ with r2c1:
         nbins=40, opacity=0.85,
         labels={"Default_Probability": "Default Probability (%)"},
     )
-    hist.update_layout(**PLOTLY_LAYOUT, height=280,
-                       bargap=0.05,
-                       xaxis_title="Default Probability (%)",
-                       yaxis_title="Customer Count")
-    st.plotly_chart(hist, use_container_width=True)
+    hist.update_layout(
+        height=280,
+        paper_bgcolor="#111827",
+        plot_bgcolor="#111827",
+        font=dict(color="#94A3B8"),
+        bargap=0.05,
+        xaxis_title="Default Probability (%)",
+        yaxis_title="Customer Count"
+    )
 
 with r2c2:
     if "Credit_Score" in df_filtered.columns:
@@ -525,10 +538,15 @@ with r2c2:
             hover_data=["Customer_ID", "Loan_Decision"] if "Customer_ID" in df_filtered.columns else None,
         )
         scatter.update_traces(marker=dict(size=4))
-        scatter.update_layout(**PLOTLY_LAYOUT, height=280,
-                              xaxis_title="Credit Score",
-                              yaxis_title="Enterprise Risk Score")
-        st.plotly_chart(scatter, use_container_width=True)
+        scatter.update_layout(
+
+            height=280,
+            paper_bgcolor="#111827",
+            plot_bgcolor="#111827",
+            font=dict(color="#94A3B8"),
+            xaxis_title="Credit Score",
+            yaxis_title="Enterprise Risk Score"
+        )
     else:
         st.markdown('<div class="section-label">Income vs Risk Score</div>', unsafe_allow_html=True)
         scatter2 = px.scatter(
@@ -561,9 +579,16 @@ if "RBP_Uncertainty" in df_filtered.columns:
         unc_scatter.update_traces(marker=dict(size=4))
         unc_scatter.add_hline(y=0.15, line_dash="dot", line_color="#EF4444",
                               annotation_text="Uncertainty Threshold", annotation_font_color="#EF4444")
-        unc_scatter.update_layout(**PLOTLY_LAYOUT, height=280,
-                                  title_font=dict(color="#94A3B8", size=13))
-        st.plotly_chart(unc_scatter, use_container_width=True)
+        unc_scatter.scatter.update_layout(
+            height=280,
+            paper_bgcolor="#111827",
+            plot_bgcolor="#111827",
+            font=dict(color="#94A3B8"),
+            xaxis_title="Credit Score",
+            yaxis_title="Enterprise Risk Score"
+            )
+
+
 
     with r3c2:
         rbp_hist = px.histogram(
@@ -573,9 +598,14 @@ if "RBP_Uncertainty" in df_filtered.columns:
             title="RBP Graph Risk Score Distribution",
             labels={"RBP_Risk_Score": "Graph Propagation Risk Score"},
         )
-        rbp_hist.update_layout(**PLOTLY_LAYOUT, height=280,
-                               title_font=dict(color="#94A3B8", size=13))
-        st.plotly_chart(rbp_hist, use_container_width=True)
+        
+        rbp_hist.update_layout(
+            height=280,
+            paper_bgcolor="#111827",
+            plot_bgcolor="#111827",
+            font=dict(color="#94A3B8"),
+            title_font=dict(color="#94A3B8", size=13)
+        )
 
 # ──────────────────────────────────────────────
 # ROW 4 — CUSTOMER INTELLIGENCE TABLE
