@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# ML artifacts (too large for GitHub)
+best_credit_model/
+lstm_credit_risk_model.keras
+*.keras
+*.h5
+
+# Data files (keep CSVs out of git - too large)
+banking_dataset.csv
+banking_dataset_smote.csv
+train_rbp.csv
+test_rbp.csv
+enterprise_risk_predictions.csv
+enterprise_explainable_predictions.csv
+enterprise_explainable_predictions_*.csv
+lstm_predictions.csv
+shap_explanations.csv
+fairness_age.csv
+fairness_income.csv
+sample_upload.csv
+enterprise_upload_test.csv
+
+# Streaming dirs
+stream_input/
+stream_output/
+stream_checkpoint/
+drift_log.txt
+
+# Plots (regenerate in notebook)
+*.png
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
