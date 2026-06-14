@@ -463,14 +463,12 @@ with r1c2:
         marker=dict(line=dict(color="#111827", width=2)),
     )
     pie.update_layout(
-        **PLOTLY_LAYOUT,
         height=260,
+        paper_bgcolor="#111827",
+        plot_bgcolor="#111827",
+        font=dict(color="#94A3B8"),
         showlegend=True,
-        legend=dict(
-            orientation="h",
-            x=0.5,
-            y=0
-        )
+        legend=dict(orientation="h")
     )
 
 # Decision breakdown
