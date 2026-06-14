@@ -579,7 +579,7 @@ if "RBP_Uncertainty" in df_filtered.columns:
         unc_scatter.update_traces(marker=dict(size=4))
         unc_scatter.add_hline(y=0.15, line_dash="dot", line_color="#EF4444",
                               annotation_text="Uncertainty Threshold", annotation_font_color="#EF4444")
-        unc_scatter.scatter.update_layout(
+        unc_scatter.update_layout(
             height=280,
             paper_bgcolor="#111827",
             plot_bgcolor="#111827",
@@ -598,7 +598,7 @@ if "RBP_Uncertainty" in df_filtered.columns:
             title="RBP Graph Risk Score Distribution",
             labels={"RBP_Risk_Score": "Graph Propagation Risk Score"},
         )
-        
+
         rbp_hist.update_layout(
             height=280,
             paper_bgcolor="#111827",
