@@ -462,10 +462,16 @@ with r1c2:
         textfont_size=11,
         marker=dict(line=dict(color="#111827", width=2)),
     )
-    pie.update_layout(**PLOTLY_LAYOUT, height=260,
-                      showlegend=True,
-                      legend=dict(orientation="h", yanchor="bottom", y=-0.2))
-    st.plotly_chart(pie, use_container_width=True)
+    pie.update_layout(
+        **PLOTLY_LAYOUT,
+        height=260,
+        showlegend=True,
+        legend=dict(
+            orientation="h",
+            x=0.5,
+            y=0
+        )
+    )
 
 # Decision breakdown
 with r1c3:
