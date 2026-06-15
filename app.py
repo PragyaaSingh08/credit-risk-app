@@ -270,8 +270,8 @@ with r1c2:
                      color="Risk_Level", color_discrete_map=RC, hole=0.58)
     fig_pie.update_traces(textfont_size=12,
                           marker=dict(line=dict(color="#111827", width=2)))
-    fig_pie.update_layout(**PL, height=270, showlegend=True,
-                          legend=dict(orientation="h", yanchor="bottom", y=-0.25))
+    fig_pie.update_layout(**PL, height=270, showlegend=True)
+        fig_pie.update_layout(legend=dict(orientation="h", yanchor="bottom", y=-0.25))
     st.plotly_chart(fig_pie, use_container_width=True)
 
 with r1c3:
