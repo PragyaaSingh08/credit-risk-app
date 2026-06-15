@@ -289,8 +289,8 @@ with r1c3:
             text=[f"{row['Count']:,}"], textposition="outside",
             textfont=dict(color="#F1F5F9", size=14),
         ))
-    fig_bar.update_layout(**PL, height=270, showlegend=False, barmode="group",
-                          yaxis=dict(showgrid=True, gridcolor="#1F2D45"))
+    fig_bar.update_layout(**PL, height=270, showlegend=False, barmode="group")
+    fig_bar.update_layout(yaxis=dict(showgrid=True, gridcolor="#1F2D45"))
     st.plotly_chart(fig_bar, use_container_width=True)
 
 st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
